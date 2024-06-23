@@ -1,0 +1,16 @@
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\bin\Debug\Часть 2.exe.config
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\bin\Debug\Часть 2.exe
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\bin\Debug\Часть 2.pdb
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\obj\Debug\Часть 2.csproj.AssemblyReference.cache
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\obj\Debug\Часть 2.csproj.SuggestedBindingRedirects.cache
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\obj\Debug\Часть 2.csproj.CoreCompileInputs.cache
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\obj\Debug\Часть 2.exe
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\obj\Debug\Часть 2.pdb
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\bin\Debug\Часть 2.exe.config
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\bin\Debug\Часть 2.exe
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\bin\Debug\Часть 2.pdb
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\obj\Debug\Часть 2.csproj.AssemblyReference.cache
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\obj\Debug\Часть 2.csproj.SuggestedBindingRedirects.cache
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\obj\Debug\Часть 2.csproj.CoreCompileInputs.cache
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\obj\Debug\Часть 2.exe
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Часть 2\Часть 2\obj\Debug\Часть 2.pdb

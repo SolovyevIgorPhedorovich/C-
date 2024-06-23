@@ -1,0 +1,15 @@
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\bin\Debug\net7.0\Project 1.exe
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\bin\Debug\net7.0\Project 1.deps.json
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\bin\Debug\net7.0\Project 1.runtimeconfig.json
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\bin\Debug\net7.0\Project 1.dll
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\bin\Debug\net7.0\Project 1.pdb
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\obj\Debug\net7.0\Project 1.csproj.AssemblyReference.cache
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\obj\Debug\net7.0\Project 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\obj\Debug\net7.0\Project 1.AssemblyInfoInputs.cache
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\obj\Debug\net7.0\Project 1.AssemblyInfo.cs
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\obj\Debug\net7.0\Project 1.csproj.CoreCompileInputs.cache
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\obj\Debug\net7.0\Project 1.dll
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\obj\Debug\net7.0\refint\Project 1.dll
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\obj\Debug\net7.0\Project 1.pdb
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\obj\Debug\net7.0\Project 1.genruntimeconfig.cache
+C:\Users\igor2\OneDrive\Рабочий стол\ООП\Практическая работа 13\Project 1\obj\Debug\net7.0\ref\Project 1.dll

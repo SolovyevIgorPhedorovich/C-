@@ -1,0 +1,16 @@
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\obj\Debug\Задание 1.csproj.AssemblyReference.cache
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\obj\Debug\Задание 1.csproj.SuggestedBindingRedirects.cache
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\obj\Debug\Задание 1.csproj.CoreCompileInputs.cache
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\bin\Debug\Задание 1.exe.config
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\bin\Debug\Задание 1.exe
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\bin\Debug\Задание 1.pdb
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\obj\Debug\Задание 1.exe
+C:\Users\igor2\Desktop\Учеба\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\obj\Debug\Задание 1.pdb
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\bin\Debug\Задание 1.exe.config
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\bin\Debug\Задание 1.exe
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\bin\Debug\Задание 1.pdb
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\obj\Debug\Задание 1.csproj.AssemblyReference.cache
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\obj\Debug\Задание 1.csproj.SuggestedBindingRedirects.cache
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\obj\Debug\Задание 1.csproj.CoreCompileInputs.cache
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\obj\Debug\Задание 1.exe
+C:\Users\igor2\Desktop\Учеба\5 СЕМЕСТР\ОПП С\4 семестр\Решения\Практическая работа 10\Задание 1\Задание 1\obj\Debug\Задание 1.pdb
