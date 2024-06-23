@@ -1,33 +1,41 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace Project1
 {
+    // Базовый класс коллекции (однонапраленный список)
     class Collection<T> : ICloneable, IEnumerable<T>
     {
-        public T value;
-        public Collection<T> next;
-        private int size;
-
+        public T value; // Элемент
+        public Collection<T> next; // Сылка на соедующий элемент
+        private int size; // Размер коллекции
+        
+        // Конструктор без параметров
         public Collection()
         {
             value = default(T);
             next = null;   
         }
+
+        // Конструктор с параметрам (уставливает фиксированный размер коллекци)
         public Collection(int capacity)
         {
             value = default(T);
             next = null;
             size = capacity;
         }
+
+        // Конструктор с параметрам (создает коллекию на основе уже созданной).
         public Collection(Collection<T> c)
         {
             value = c.value;
             next = c.next;
             size = c.size;
         }
+        
+        // Считает элементы в коллекции
         virtual public int Count()
         {
             int count = 0;
@@ -38,6 +46,8 @@ namespace Project1
             }
             return count;
         }
+
+        // Вставка элемента в начало коллекции
         public virtual Collection<T> AddToBeg(T x)
         {
             if (this.size != 0 && this.size == Count())
@@ -54,6 +64,8 @@ namespace Project1
             else c.value = x;
             return c;
         }
+
+        // Вставка элемента в конец коллекции
         public virtual Collection<T> AddToEnd(T x)
         {
             if (this.size != 0 && this.size == Count())
@@ -82,6 +94,8 @@ namespace Project1
             }
             return beg;
         }
+
+        // Удаляет переданный элемент из коллекции, если он там есть
         public virtual Collection<T> DelElement(T f)
         {
             Collection<T> a = new Collection<T>(1);
@@ -115,6 +129,8 @@ namespace Project1
             r.next = r.next.next;
             return beg;
         }
+
+        // Удаляет элемент из колекции находящийся на переданной позиции
         virtual public Collection<T> DelElementFromNumber(int d)
         {
             if (d <= Count())
@@ -138,6 +154,8 @@ namespace Project1
             }
             return this;
         }
+
+        // Метод поиска по элементу
         public bool Find(T f)
         {
             Collection<T> a = new Collection<T>(1);
@@ -153,14 +171,20 @@ namespace Project1
             }
             return false;
         }
+
+        // Метод глубокого копирования коллекции
         public object Clone()
         {
             return new Collection<T>(this);
         }
+
+        // Фунеция поверхностного копирования коллекции
         public object SurfaceCopy()
         {
             return this.MemberwiseClone();
         }
+
+        // Удаялет коллецию из памяти
         public virtual void Del()
         {
             this.next = null;
@@ -175,10 +199,12 @@ namespace Project1
                 c = c.next;
             }
         }
+
+        // Печать коллекции
         public void Print (int c)
         {
             Collection<T> x = this;
-            while (c != null)
+            while (x != null)
             {
                 if (c == 0)
                 {
@@ -188,10 +214,14 @@ namespace Project1
                 x = x.next;
             }
         }
+        
+        // Реализация метода интерфейса IEnumerable.GetEnumerator()
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return GetEnumerator();
+            return GetEnumerator(); // Возвращаем перечислитель, используя метод GetEnumerator() для обобщенного интерфейса
         }
+
+        // Реализация метода интерфейса IEnumerable<T>.GetEnumerator()
         virtual public IEnumerator<T> GetEnumerator()
         {
             Collection<T> current = this;
@@ -202,29 +232,41 @@ namespace Project1
             }
         }
     }
+
+    // Реализация собственного кдасса IEnumerator
     class MyEnumerator<T> : IEnumerator<T>
     {
         Collection<T> beg;
         Collection<T> current;
 
+        // Конструктор класса, принимающий коллекцию
         public MyEnumerator(Collection<T> c)
         {
             beg = c;
             current = c;
         }
+
+        // Свойство Current для реализации интерфейса IEnumerator (необобщенный)
         object IEnumerator.Current
         {
             get{ return Current;}
         }
+
+        // Свойство Current для реализации интерфейса IEnumerator<T> (обобщенный)
         public T Current
         {
             get {return current.value;}
         }
+
+        // Метод для сброса перечислителя в начальное состояние
         public void Reset()
         {
             current = this.beg;
         }
+
         public void Dispose(){}
+
+        // Метод для перехода к следующему элементу коллекции
         public bool MoveNext()
         {
             if (current.next == null)
@@ -239,74 +281,93 @@ namespace Project1
             }
         }
     }
+
+    // Класс коллекции, расширяющий базовый класс Collection<Person>
     class MyCollection:Collection<Person>
     {
-        public MyCollection():base(){}
+
+        // Коснтрукторы соответствуют базовому классу
+        public MyCollection():base(){} 
         public MyCollection(MyCollection c):base(c){}
 
+        // Преопределенная функцию вставки элементв в начало
         public override Collection<Person> AddToBeg(Person x)
         {
             return base.AddToBeg(x);
         }
+
+        // Преопределенная функцию вставки элементв в конец
         public override Collection<Person> AddToEnd(Person x)
         {
             return base.AddToEnd(x);
         }
+        
+        // Преопределенная функцию удаления элемента по значению
         public override Collection<Person> DelElement(Person f)
         {
             return base.DelElement(f);
         }
+
+        // Преопределенная функцию удаления элемента по индексу
         public override Collection<Person> DelElementFromNumber(int j)
         {
             return base.DelElementFromNumber(j);
         }
+
+        // Преопределенная функцию удаления коллекции
         public override void Del()
         {
             base.Del();
         }
+
+        // Метод элементов по имени
         private MyCollection SortName()
         {
-            MyCollection m = this;
-            MyCollection sorted = new MyCollection(); 
-            MyCollection x = new MyCollection(m);
-            while (x != null)
+            MyCollection m = this; // Сылка на текующую коллекция
+            MyCollection sorted = new MyCollection();  // Создаем новую коллекция для записи в нее отсортрованных данных
+            MyCollection x = new MyCollection(m); /// Создаем копию текущего состояния коллекции
+            while (x != null) // Итерируемся по элементам коллекции
             {
-                Person min = null;
-                if (x.next == null){ min = x.value; x = null;}
+                Person min = null; // Сохраняем ссылку на минимальный элемент
+                if (x.next == null){ min = x.value; x = null;} // если это послежний элемент коллекции, то едниственный элемент будет минимальным, и очищаем коллекцию
                 else
                 {
-                    Collection<Person> c = new MyCollection(x);
-                    while (c.next != null)
+                    Collection<Person> c = new MyCollection(x); // Создаем копию текущего состояния коллекции
+                    while (c.next != null)  // Итерируемся по элементам коллекции
                     {
+                         // Находим минимальный элемент по имени
                         for (int i = 0; i < (c.value.name.Length > c.next.value.name.Length ? c.next.value.name.Length:c.value.name.Length);i++)
                         {
-                            if (c.value.name.ToCharArray()[i] < c.next.value.name.ToCharArray()[i])
-                                if (min == null)
-                                    {min = c.value; break;}
-                                else 
-                                    if (c.value.name.ToCharArray()[i] < min.name.ToCharArray()[i])
-                                        {min = c.value; break;}
-                                    else break;
-                            if (c.value.name.ToCharArray()[i] > c.next.value.name.ToCharArray()[i])
-                            {
-                                if (min == null)
-                                    {min = c.next.value;break;}
-                                else
-                                    if (c.next.value.name.ToCharArray()[i] < min.name.ToCharArray()[i])
-                                        {min = c.next.value;break;}
+                            // Сравниваем символы имени текущего элемента и следующего элемента
+                            if (c.value.name.ToCharArray()[i] < c.next.value.name.ToCharArray()[i]) 
+                                if (min == null)                                                               // Если минимальный элемент еще не найден
+                                    {min = c.value; break;}                                                    // Устанавливаем текущий элемент как минимальный, и прерываем цикл
+                                else           
+                                    if (c.value.name.ToCharArray()[i] < min.name.ToCharArray()[i])             // Если текущий элемент меньше текущего минимального элемента
+                                        {min = c.value; break;}                                                // Устанавливаем текущий элемент как минимальный
+                                    else break;        
+                            if (c.value.name.ToCharArray()[i] > c.next.value.name.ToCharArray()[i])            // Если следующий элемент меньше текущего элемента
+                            {      
+                                if (min == null)                                                               // Если минимальный элемент еще не найден
+                                    {min = c.next.value;break;}                                                // Устанавливаем следующий элемент как минимальный
+                                else       
+                                    if (c.next.value.name.ToCharArray()[i] < min.name.ToCharArray()[i])        // Если следующий элемент меньше текущего минимального элемента
+                                        {min = c.next.value;break;}                                            // Устанавливаем следующий элемент как минимальный
                                     else break;
                             }
-                            if (c.value.name.ToCharArray()[i] == c.next.value.name.ToCharArray()[i]) continue;
+                            if (c.value.name.ToCharArray()[i] == c.next.value.name.ToCharArray()[i]) continue; // Если текущий элемент и следующий элемент равны, продолжаем сравнение следующего символа
                         }
-                        c = c.next;
+                        c = c.next;                                                                            // Переходим к следующему элементу
                     }
                 }
-                sorted.AddToEnd(min);
+                sorted.AddToEnd(min);                                                                          // Добавляем минимальный элемент в отсортированную коллекцию
                  if (x != null)
-                    x.DelElement(min);
+                    x.DelElement(min);                                                                         // Удаляем минимальный элемент из текущей коллекции
             }
-            return sorted;
+            return sorted;                                                                                     // Возвращает отсортированную коллекцию
         }
+
+        // Метод элементов по фамилии, алгорит тотже самыя, что и для сортировки по имени, но вместо имени сравниваеться фамилии
         private MyCollection SortSurname()
         {
             MyCollection m = this;
@@ -350,6 +411,8 @@ namespace Project1
             }
             return sorted;
         }
+
+        // Метод элементов по должности, алгорит тотже самыя, что и для сортировки по имени и фамилии, но вместо имени сравниваеться должность
         private MyCollection SortPosition()
         {
             MyCollection m = this;
@@ -393,6 +456,8 @@ namespace Project1
             }
             return sorted;
         }
+
+        // Метод элементов по полу, алгорит тотже самыя, что и для сортировки по имени и фамилии, но вместо имени сравниваеться пол
         private MyCollection SortGender()
         {
             MyCollection m = this;
@@ -430,6 +495,8 @@ namespace Project1
             }
             return sorted;
         }
+
+        // Метод элементов по возрасту, алгорит тотже самыя, что и для сортировки по имени и фамилии, но вместо имени сравниваеться возраст
         private MyCollection SortAge()
         {
             MyCollection m = this;
@@ -469,6 +536,8 @@ namespace Project1
             }
             return sorted;
         }
+
+        // Выводи текстовое менб сортировки в консоль
         public MyCollection Sort(int i)
         {
             if (i == 1) return SortPosition();
@@ -478,66 +547,84 @@ namespace Project1
             if (i == 5) return SortAge();
             else {Console.WriteLine("Неверный параметр."); return this;}
         }
+
+        // Возвращает длину коллекции
         public int Length
         {   
             get {return Count();}
         }
+        
+        // Реалищцаия интерфейса IEnumerator()
         public override IEnumerator<Person> GetEnumerator()
         {
             return base.GetEnumerator();
         }
     }
+    
+    // Класс коллекции, расширяющий базовый класс MyCollection
     class NewMyCollection:MyCollection
     {
-        public string NameCollection{get; set;}
-        public delegate void CollectionHandler(object source, CollectionHandlerEventArgs args);
-        public event CollectionHandler CollectionCountChanged;
-        public event CollectionHandler CollectionReferenceChanged;
+        public string NameCollection{get; set;}                                                 // Свойство для хранения имени коллекции
+        public delegate void CollectionHandler(object source, CollectionHandlerEventArgs args); // Делегат для обработки событий изменения коллекции
+        public event CollectionHandler CollectionCountChanged;                                   // Событие, вызываемое при изменении количества элементов в коллекции
+        public event CollectionHandler CollectionReferenceChanged;                              // Событие, вызываемое при изменении ссылки на элемент коллекции
+        
+        // Метод для вызова события изменения количества элементов
         public virtual void OnCollectionCountChanged(object source, CollectionHandlerEventArgs args)
         {
-            if (CollectionCountChanged != null)
-                CollectionCountChanged(source,args);
+            if (CollectionCountChanged != null)              // Проверяем, есть ли подписчики на событие
+                CollectionCountChanged(source,args);         // Вызываем событие
         }
+        
+        // Метод для вызова события изменения ссылки на элемент
         public virtual void OnCollectionReferenceChanged(object source, CollectionHandlerEventArgs args)
         {
-            if (CollectionReferenceChanged != null)
-                CollectionReferenceChanged(source, args);
+            if (CollectionReferenceChanged != null)         // Проверяем, есть ли подписчики на событие
+                CollectionReferenceChanged(source, args);   // Вызываем событие
         }
+
+        // Переопределенный метод для добавления элемента в конец коллекции
         public override Collection<Person> AddToEnd(Person x)
         {
-            OnCollectionCountChanged(this, new CollectionHandlerEventArgs(NameCollection, "добавление в конец коллекции", x));
-            return base.AddToEnd(x);
+            OnCollectionCountChanged(this, new CollectionHandlerEventArgs(NameCollection, "добавление в конец коллекции", x));  // Вызываем событие изменения количества элементов
+            return base.AddToEnd(x);                                                                                            // Вызываем базовый метод для добавления элемента
         }
+
+        // Переопределенный метод для добавления элемента в начало коллекции
         public override Collection<Person> AddToBeg(Person x)
         {
-            OnCollectionCountChanged(this, new CollectionHandlerEventArgs(NameCollection, "добавление в начало коллекции", x));
-            return base.AddToBeg(x);
+            OnCollectionCountChanged(this, new CollectionHandlerEventArgs(NameCollection, "добавление в начало коллекции", x));// Вызываем событие изменения количества элементов
+            return base.AddToBeg(x);                                                                                           // Вызываем базовый метод для добавления элемента
         }
+
+        // Метод для удаления элемента по индексу
         public bool Remove(int j)
         {
-            if (0 < j && j <= Length)
+            if (0 < j && j <= Length)                                                                                // Проверяем, находится ли индекс в пределах допустимого диапазона
             {
-                OnCollectionCountChanged(this, new CollectionHandlerEventArgs(NameCollection, "удаление", this[j]));
-                DelElementFromNumber(j);
+                OnCollectionCountChanged(this, new CollectionHandlerEventArgs(NameCollection, "удаление", this[j])); // Вызываем событие изменения количества элементов
+                DelElementFromNumber(j);                                                                             // Удаляем элемент по индексу
                 return true;
             }
             return false;
         }
+
+        // Индексатор для доступа к элементам коллекции по индексу
         public Person this[int index]
         {
             get 
             {
-                Collection<Person> x = this;
-                for (int i = 0; i < Length &&  i != index; i++)
+                Collection<Person> x = this;                        // Переменная для хранения текущего элемента
+                for (int i = 0; i < Length &&  i != index; i++)     // Итерируемся по элементам коллекции до достижения заданного индекса
                 {
                     x = x.next;
                 }
-                return x.value;
+                return x.value;                                     // Возвращаем значение элемента по заданному индексу
             }
             set 
             {   
-                OnCollectionReferenceChanged(this, new CollectionHandlerEventArgs(NameCollection, "изменение", this[index]));
-                Collection<Person> x = this;
+                OnCollectionReferenceChanged(this, new CollectionHandlerEventArgs(NameCollection, "изменение", this[index]));    // Вызываем событие изменения ссылки на элемент
+                Collection<Person> x = this;        
                 for (int i = 0; i < Length &&  i == index; i++)
                 {
                     x = x.next;
@@ -546,12 +633,15 @@ namespace Project1
             }
         }
     }
+
+    // Класс события для коллекции
     class CollectionHandlerEventArgs:System.EventArgs
     {
-        public string name_collection{get;set;}
-        public string event_type{get;set;}
-        public Person element{get;set;}
+        public string name_collection{get;set;}  // Свойство для хранения имени коллекции, в которой произошло событие
+        public string event_type{get;set;}       // Свойство для хранения типа события (например, добавление или удаление элемента)
+        public Person element{get;set;}          // Свойство для хранения элемента коллекции, с которым связано событие
 
+         // Конструктор для инициализации аргументов события
         public CollectionHandlerEventArgs(string input_name_collection, string input_event_type, Person input_col)
         {
             name_collection = input_name_collection;
@@ -560,23 +650,30 @@ namespace Project1
         }
 
     }
+
+    // Класс журнал, для хранения событий
     class Journal
     {
-        public string name_collection{get;set;}
-        public string event_type{get;set;}
-        public string data {get;set;}
-        public List<Journal> journal { get; set; }
+        public string name_collection{get;set;}         // Свойство для хранения имени коллекции, в которой произошло событие
+        public string event_type{get;set;}              // Свойство для хранения типа события (например, добавление или удаление элемента)
+        public string data {get;set;}                   // Свойство для хранения элемента коллекции, с которым связано событие
+        public List<Journal> journal { get; set; }      // Журнал событий коллекции
 
+        // Конструктор по умолчанию инициализирует список журнал
         public Journal()
         {
             journal = new List<Journal>();
         }
+
+        // Конструктор для инициализации события журнала
         public Journal(string input_name_collection, string input_event_type, string intput_data)
         {
             name_collection = input_name_collection;
             event_type = input_event_type;
             data = intput_data;
         }
+
+         // Переопределенный метод ToString для форматированного вывода информации о событии
         public override string ToString()
         {
             string from;
@@ -589,11 +686,14 @@ namespace Project1
             return event_type + " " + data + from + name_collection;
         }
 
+        // Метод для обработки события изменения количества элементов в коллекции
         public void CollectionCountChanged(object source, CollectionHandlerEventArgs args)
         {
             Journal j = new Journal(args.name_collection,args.event_type, args.element.ToString());
             journal.Add(j);
         }
+
+         // Метод для обработки события изменения ссылки на элемент в коллекции
         public void CollectionReferenceChanged(object source, CollectionHandlerEventArgs args)
         {
             Journal j = new Journal(args.name_collection,args.event_type, args.element.ToString());
